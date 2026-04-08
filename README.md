@@ -29,8 +29,8 @@ module "ssl_certs" {
 ### With Azure DNS integration
 
 ```hcl
-module "ssl_certs" {
-  source = "./modules/ssl-certs"
+module "acmebot" {
+  source = "MaximilianoAguirre/terraform-azurerm-acmebot"
 
   resource_group_name = "rg-acmebot"
   app_name_prefix     = "acmebot"
@@ -50,8 +50,8 @@ When `azure_dns_zones` is provided, the module automatically:
 ### With Azure AD authentication
 
 ```hcl
-module "ssl_certs" {
-  source = "./modules/ssl-certs"
+module "acmebot" {
+  source = "MaximilianoAguirre/terraform-azurerm-acmebot"
 
   resource_group_name = "rg-acmebot"
   app_name_prefix     = "acmebot"
@@ -76,8 +76,8 @@ Set `auth_enabled = false` to skip authentication setup entirely.
 ### With an existing Key Vault
 
 ```hcl
-module "ssl_certs" {
-  source = "./modules/ssl-certs"
+module "acmebot" {
+  source = "MaximilianoAguirre/terraform-azurerm-acmebot"
 
   resource_group_name   = "rg-acmebot"
   app_name_prefix       = "acmebot"
